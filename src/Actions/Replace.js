@@ -13,10 +13,10 @@ class Replace {
 				if(this.open_tag) {
 					switch(this.open_tag) {
 						case 'if':
-							this.new = '}>';
+							this.new = '}">';
 							break;
 						case 'include':
-							this.new = '*/}'
+							this.new = '-->';
 							break;
 						case 'onclick':
 							this.new = '}';

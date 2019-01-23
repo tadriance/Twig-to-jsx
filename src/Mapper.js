@@ -1,25 +1,24 @@
 class Mapper {
 	constructor() {
 		this.maps = {
-			'{% if': this._action('REPLACE', ['<If condition={'], 'if'),
-			'{% else %}': this._action('REPLACE', ['<Else />']),
-			'app.': this._action('REPLACE', [' $.app.']),
+			'{% if': this._action('REPLACE', ['<isif condition="${'], 'if'),
+			'{% else %}': this._action('REPLACE', ['<iselse />']),
+			'{% elseif': this._action('REPLACE', ['<iselseif condition="${'], 'if'),
+			'app.': this._action('REPLACE', ['']),
 			'==': this._action('REPLACE', ['===']),
-			'{% endif %}': this._action('REPLACE', ['</If>']),
-			'class=': this._action('REPLACE', ['className=']),
+			'{% endif %}': this._action('REPLACE', ['</isif>']),
 			'onclick': this._action('REPLACE', ['onClick']),
-			// 'onclick=': this._action('REPLACE_FROM_CURSOR', ['onClick', 8, '{'], 'onclick')
 			' not ': this._action('REPLACE', ['!']),
 			' and ': this._action('REPLACE', [' && ']),
 			' or ': this._action('REPLACE', [' || ']),
-			'{#': this._action('REPLACE', ['{/*']),
-			'#}': this._action('REPLACE', ['*/}']),
-			'{{ ': this._action('REPLACE', ['{']),
+			'{#': this._action('REPLACE', ['']),
+			'#}': this._action('REPLACE', ['']),
+			'{{ ': this._action('REPLACE', ['${']),
 			' }}': this._action('REPLACE', ['}']),
 			'|join': this._action('REPLACE', ['.join']),
 			'%}': this._action('REPLACE', ['[CLOSE_TAG]']),
 			'for=': this._action('REPLACE', ['htmlFor=']),
-			'{% include': this._action('REPLACE', ['{/* include template :'], 'include')
+			'{% include': this._action('REPLACE', ['<!-- include template :'], 'include')
 		}
 	}
 
